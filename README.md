@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.79.165
+IP-адрес 158.160.45.244
 
 Frontend https://kelendis.mesto.nomoredomains.xyz
 
