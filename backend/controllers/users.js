@@ -25,11 +25,13 @@ const findById = (req, res, next, id) => {
 const getUser = (req, res, next) => {
   const { userId } = req.params;
   findById(req, res, next, userId);
+  console.log(res);
 };
 
 const getCurrentUser = (req, res, next) => {
   const { _id } = req.user;
   findById(req, res, next, _id);
+  console.log(res);
 };
 
 const createUser = (req, res, next) => {
@@ -41,7 +43,7 @@ const createUser = (req, res, next) => {
       name, about, avatar, email, password: hash,
     }))
     .then((user) => {
-      res.send({ data: user });
+      res.send(user);
     })
     .catch((err) => {
       if (err.code === ERROR_CODE_UNIQUE) {
@@ -109,7 +111,7 @@ const login = (req, res, next) => {
               maxAge: 36000 * 24 * 7,
               httpOnly: true,
               sameSite: true,
-            }).send({ data: user.toJSON() });
+            }).send(user.toJSON());
           } else {
             next(new ErrorAccess({ message: 'Неверный логин или пароль' }));
           }

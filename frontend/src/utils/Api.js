@@ -2,6 +2,7 @@ export default class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
     this._headers = headers;
+    this._authorization = headers['authorization'];
   }
   _getResponseData(res) {
     if (!res.ok) {
@@ -71,9 +72,9 @@ export default class Api {
   }
 }
 export const api = new Api({
-  baseUrl: "https://api.domainname.students.nomoredomains.sbs",
+  baseUrl: "http://localhost:3000",
   headers: {
-    authorization: "4c274032-0b3e-4759-b4b1-a9d64f1dfaf8",
+    authorization: ['authorization'],
     "Content-Type": "application/json",
   },
 });
