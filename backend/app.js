@@ -11,7 +11,7 @@ const router = require('./routes');
 const app = express();
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/mestodb');
+mongoose.connect('mongodb://api:27017/mestodb');
 
 app.use(bodyParser.json());
 app.use(cookieParser());
