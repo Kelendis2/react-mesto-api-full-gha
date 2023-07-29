@@ -25,13 +25,11 @@ const findById = (req, res, next, id) => {
 const getUser = (req, res, next) => {
   const { userId } = req.params;
   findById(req, res, next, userId);
-  console.log(res);
 };
 
 const getCurrentUser = (req, res, next) => {
   const { _id } = req.user;
   findById(req, res, next, _id);
-  console.log(res);
 };
 
 const createUser = (req, res, next) => {
@@ -107,11 +105,7 @@ const login = (req, res, next) => {
         .then((isValidUser) => {
           if (isValidUser) {
             const newToken = jwt.sign({ _id: user._id }, JWT_SECRET);
-            res.cookie('token', newToken, {
-              maxAge: 36000 * 24 * 7,
-              httpOnly: true,
-              sameSite: true,
-            }).send(user.toJSON());
+            res.send({token: newToken});
           } else {
             next(new ErrorAccess({ message: 'Неверный логин или пароль' }));
           }

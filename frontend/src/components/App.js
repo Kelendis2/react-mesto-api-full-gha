@@ -40,13 +40,13 @@ function App() {
 
   // Получение данных с сервера о пользователе
   useEffect(() => {
-    Promise.all([api.getProfile(), api.getInitialCards()])
+    loggedIn && Promise.all([api.getProfile(), api.getInitialCards()])
       .then(([currentUser, card]) => {
         setCurrentUser(currentUser);
         setCards(card);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [loggedIn]);
 
   //Открытие попапа автара и изменение его.
   const handleEditAvatarClick = () => {
@@ -175,14 +175,12 @@ function App() {
   };
 
   //Логин
-  const handleLogin = ({ email,password }) => {
+  const handleLogin = ({ email, password }) => {
     auth
       .authorize(email, password)
       .then((data) => {
         if (data) {
-          console.log(data);
-          localStorage.setItem("jwt", data);
-          console.log(data);
+          localStorage.setItem("jwt", data.token);
           setLoggedIn(true);
           setUserEmail({ email });
           navigate("/users/me");
