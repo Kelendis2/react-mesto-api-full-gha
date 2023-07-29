@@ -10,7 +10,7 @@ const auth = (req, res, next) => {
     if (!token) {
       return handleAuthError(req, res, next);
     }
-    const payload = jwt.verify(token.replace`Bearer `, '', JWT_SECRET);
+    const payload = jwt.verify(token.replace('Bearer ', ''), JWT_SECRET);
     req.user = payload;
     next();
   } catch (err) {
