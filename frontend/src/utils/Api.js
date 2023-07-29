@@ -72,7 +72,7 @@ export default class Api {
   }
 }
 export const api = new Api({
-  baseUrl: "http://api.domainname.students.nomoredomains.sbs",
+  baseUrl: "https://api.domainname.students.nomoredomains.sbs",
   headers: {
     authorization: `Bearer ${localStorage.getItem('jwt')}`,
     "Content-Type": "application/json",
