@@ -8,4 +8,8 @@
   line-height: 22px;
   letter-spacing: 0em;
   text-align: right;
+  word-wrap: break-word;
+  position: absolute;
+  top: 16px;
+  right: 100px;
 }

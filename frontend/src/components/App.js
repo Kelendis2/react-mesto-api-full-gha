@@ -186,7 +186,10 @@ function App() {
           navigate("/users/me");
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        handleInfoTooltipNegative(true);
+      });
   };
 
   //Проверка токена
@@ -198,6 +201,7 @@ function App() {
         .then((res) => {
           if (res) {
             setLoggedIn(true);
+            setUserEmail({ email });
             navigate("/users/me");
           }
         })
