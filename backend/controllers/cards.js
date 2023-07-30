@@ -12,7 +12,7 @@ const createCard = (req, res, next) => {
   Card.create({ name, link, owner: _id })
     .then((card) => {
       res
-        .status(STATUS_OK)
+        .status(201)
         .send(card);
     })
     .catch((err) => {
