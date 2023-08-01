@@ -15,6 +15,16 @@ function Register({ handleRegister }) {
     password: "",
   });
 
+  const [errorMessage, setErrorMessage] = React.useState("");
+  const handleReg = (e) => {
+    e.preventDefault();
+
+    if (!formValue.email || !formValue.password) {
+      setErrorMessage("Both fields are required");
+      return;
+    }
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValue({
@@ -61,6 +71,7 @@ function Register({ handleRegister }) {
           value={formValue.password}
           onChange={handleChange}
         ></input>
+        <p className="registration__error"> {errorMessage} </p>
         <button className="registration__submit" type="submit">
           Зарегестрироваться
         </button>

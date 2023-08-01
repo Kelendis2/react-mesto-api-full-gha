@@ -11,3 +11,12 @@
   top: 16px;
   left: 760px;
 }
+@media screen and (max-width: 920px) {
+  .header__button-registration {
+    position: absolute;
+    top: 10px;
+    left: 230px;
+    font-size: 13px;
+  }
+}
+

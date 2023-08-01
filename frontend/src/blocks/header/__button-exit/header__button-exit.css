@@ -11,3 +11,11 @@
   top: 16px;
   left: 800px;
 }
+@media screen and (max-width: 920px) {
+  .header__button-exit {
+    position: absolute;
+    top: 8px;
+    left: 250px;
+    font-size: 13px;
+  }
+}
