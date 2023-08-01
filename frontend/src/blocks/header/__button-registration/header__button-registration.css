@@ -3,7 +3,7 @@
   border: none;
   color: #a9a9a9;
   height: 22px;
-  width: 56px;
+  width: 70px;
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
@@ -15,7 +15,7 @@
   .header__button-registration {
     position: absolute;
     top: 10px;
-    left: 150px;
+    left: 200px;
     font-size: 13px;
   }
 }
