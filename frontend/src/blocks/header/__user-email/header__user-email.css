@@ -13,11 +13,11 @@
   right: 100px;
 }
 @media screen and (max-width: 920px) {
-  .header__button-exit {
+  .header__user-email {
     font-size: 10px;
     top: 8px;
     right: 70px;
-    max-width: 120px;
+    max-width: 90px;
     word-wrap:normal;
     white-space: nowrap;
     overflow: hidden;
